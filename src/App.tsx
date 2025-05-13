@@ -1,9 +1,7 @@
+import { MainRoutes } from "./routes/routes"
+
 function App() {
-  return (
-    <>
-      <h1>Olá mundo</h1>
-    </>
-  )
+  return (<MainRoutes />)
 }
 
 export default App
