@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout"
+import { Home } from "@/pages/Home"
 import { BrowserRouter, Route, Routes } from "react-router"
 
 export const MainRoutes = () => {
@@ -6,7 +7,7 @@ export const MainRoutes = () => {
         <BrowserRouter>
             <Routes>
                 <Route element={<Layout />}>
-                    <Route path="/" element={<h1>Home</h1>} />
+                    <Route path="/" element={<Home />} />
                 </Route>
             </Routes>
         </BrowserRouter>

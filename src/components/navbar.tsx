@@ -75,7 +75,7 @@ const Navbar = ({
           </div>
           <div className="flex gap-2">
             <Avatar className="relative flex shrink-0 overflow-hidden rounded-full h-8 w-8">
-              <AvatarImage className="aspect-square h-full w-full" src="https://github.com/shadcn.png" alt="@shadcn" />
+              <AvatarImage className="aspect-square h-full w-full" src="../../public/admin.svg" alt="@shadcn" />
               <AvatarFallback>User</AvatarFallback>
             </Avatar>
           </div>
@@ -113,7 +113,7 @@ const Navbar = ({
 
                   <div className="flex flex-col gap-3 margin-auto m-auto">
                     <Avatar className="relative flex shrink-0 overflow-hidden rounded-full h-8 w-8">
-                      <AvatarImage className="aspect-square h-full w-full" src="https://github.com/shadcn.png" alt="@shadcn" />
+                      <AvatarImage className="aspect-square h-full w-full" src="../../public/admin.svg" alt="@shadcn" />
                       <AvatarFallback>User</AvatarFallback>
                     </Avatar>
                   </div>
