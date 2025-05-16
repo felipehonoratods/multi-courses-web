@@ -1,8 +1,10 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import ImageMedio from "@/assets/medio.svg";
-import ImageGraduacao from "@/assets/lic-matematica.svg";
+import ImageTecnologia from "@/assets/tecnologia.svg";
 import ImageGames from "@/assets/games.svg";
 import ImageIdiomas from "@/assets/idiomas.svg";
+import ImageFinanceiro from "@/assets/financeiro.svg";
 
 export const Home = () => {
   return (
@@ -22,12 +24,12 @@ export const Home = () => {
         </Card>
         <Card>
           <CardHeader className="flex flex-col items-center">
-            <img src={ImageGraduacao} alt="Graduação" className="w-28 h-28 mb-2 object-contain" />
-            <CardTitle>Graduação</CardTitle>
+            <img src={ImageTecnologia} alt="Tecnologia" className="w-28 h-28 mb-2 object-contain" />
+            <CardTitle>Tecnologia</CardTitle>
           </CardHeader>
           <CardContent>
             <CardDescription>
-              Conteúdos e trilhas para graduação em diversas áreas, com foco em aprofundamento acadêmico e profissional.
+              Conteúdos e trilhas para tecnologia em diversas áreas, com foco em aprofundamento acadêmico e profissional.
             </CardDescription>
           </CardContent>
         </Card>
@@ -53,6 +55,22 @@ export const Home = () => {
             </CardDescription>
           </CardContent>
         </Card>
+        <Card>
+          <CardHeader className="flex flex-col items-center">
+            <img src={ImageFinanceiro} alt="Financeiro" className="w-28 h-28 mb-2 object-contain" />
+            <CardTitle>Financeiro</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <CardDescription>
+              Cursos para quem deseja aprender sobre finanças, investimentos e independência financeira.
+            </CardDescription>
+          </CardContent>
+        </Card>
+      </div>
+      <div className="flex justify-center mt-8">
+        <a href="/cursos">
+          <Button size="lg">Ver Cursos</Button>
+        </a>
       </div>
     </div>
   );

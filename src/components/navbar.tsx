@@ -48,10 +48,9 @@ const Navbar = ({
     alt: "logo",
   },
   menu = [
-    { title: "Home", url: "#" },
     {
       title: "Cursos",
-      url: "#",
+      url: "cursos",
     },
   ],
 }: NavbarProps) => {
