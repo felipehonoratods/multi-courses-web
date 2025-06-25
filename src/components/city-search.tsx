@@ -2,10 +2,11 @@ import { useState } from "react";
 import { Command, CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from "./ui/command";
 import { useLocationSearch } from "@/hooks/use-weather";
 import { Button } from "./ui/button";
-import { Clock, Loader2, Search, XCircle } from "lucide-react";
+import { Clock, Loader2, Search, Star, XCircle } from "lucide-react";
 import { useNavigate } from "react-router";
 import { useSearchHistory } from "@/hooks/use-search-history";
 import { format } from "date-fns";
+import { useFavorites } from "@/hooks/use-favorite";
 
 export function CitySearch() {
     const [open, setOpen] = useState(false);
@@ -13,6 +14,7 @@ export function CitySearch() {
     const navigate = useNavigate();
 
     const { data: locations, isLoading } = useLocationSearch(query);
+    const { favorites } = useFavorites();
     const { history, clearHistory, addToHistory } = useSearchHistory();
 
     const handleSelect = (cityData: string) => {
@@ -50,6 +52,29 @@ export function CitySearch() {
                     <CommandList>
                         {query.length > 2 && !isLoading && (
                             <CommandEmpty>No cities found.</CommandEmpty>
+                        )}
+
+                        {favorites.length > 0 && (
+                            <CommandGroup heading="Favorites">
+                                {favorites.map((city) => (
+                                <CommandItem
+                                    key={city.id}
+                                    value={`${city.lat}|${city.lon}|${city.name}|${city.country}`}
+                                    onSelect={handleSelect}
+                                >
+                                    <Star className="mr-2 h-4 w-4 text-yellow-500" />
+                                    <span>{city.name}</span>
+                                    {city.state && (
+                                        <span className="text-sm text-muted-foreground">
+                                            , {city.state}
+                                        </span>
+                                    )}
+                                    <span className="text-sm text-muted-foreground">
+                                        , {city.country}
+                                    </span>
+                                </CommandItem>
+                                ))}
+                            </CommandGroup>
                         )}
 
                         {history.length > 0 && (
